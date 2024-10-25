@@ -1,0 +1,20 @@
+.banner {
+    min-height: 440px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+
+    @include mq($md) {
+        min-height: 240px;
+    }
+}
+
+.banner__title {
+    text-transform: uppercase;
+    @include clamp-font-size(30, 45);
+    font-weight: bold;
+    color: $white;
+}

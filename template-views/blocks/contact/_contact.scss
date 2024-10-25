@@ -1,0 +1,44 @@
+.contact {
+    padding: 100px 0;
+
+    @include mq($md) {
+        padding: 50px 0;
+    }
+}
+
+.contact__container {
+    display: flex;
+    margin: 0 -10px;
+
+    @include mq($md) {
+        display: block;
+    }
+}
+
+.contact-item {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 10px;
+
+    p {
+        max-width: 583px;
+        @include clamp-font-size(14, 16);
+        line-height: 1.2;
+    }
+
+    @include mq($md) {
+        flex: 100%;
+        max-width: 100%;
+
+        &:first-of-type {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.contact-item__title {
+    margin-bottom: 16px;
+    @include clamp-font-size(20, 36);
+    text-transform: uppercase;
+    font-weight: 600;
+}

@@ -1,0 +1,31 @@
+.blog {
+    padding: 50px 0;
+}
+
+.blog__wrap {
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+}
+
+.blog-item {
+    flex: 33.3%;
+    max-width: 33.3%;
+    padding: 0 10px;
+    margin-bottom: 80px;
+}
+
+.blog-item__content-wrap {
+    h3 {
+        margin: 24px 0 16px;
+        @include clamp-font-size(16, 23);
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .entry-content {
+        p {
+            line-height: 1.2;
+        }
+    }
+}

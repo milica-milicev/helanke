@@ -1,0 +1,25 @@
+.hero {
+    // background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 105px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__content {
+    max-width: 730px;
+}
+
+.hero__title {
+    @include clamp-font-size(40, 80);
+    line-height: 1.2;
+    margin-bottom: 40px;
+    font-weight: 600;
+
+    span {
+        color: $orange;
+    }
+}
+

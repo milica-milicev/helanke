@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------
+## Base Layout
+--------------------------------------------------------------*/
+html, body {
+	@include font-smoothing(antialiased);
+	height: 100%;
+	overflow-x: hidden;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    @include mq($xl) {
+        padding: 0 25px;
+    }
+
+    @include mq($md) {
+        padding: 0 15px;
+    }
+}
+
+.section-head {
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.section-head__title {
+	@include clamp-font-size(22, 40);
+}
+
+.product-icons {
+	a {
+		img {
+			width: 60%;
+		}
+	}
+}

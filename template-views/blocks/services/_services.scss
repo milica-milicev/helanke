@@ -1,0 +1,27 @@
+.services {
+    padding: 50px 0;
+}
+
+.services__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service-item {
+    flex: 25%;
+    max-width: 25%;
+    text-align: center;
+    
+    img {
+        margin: 0 auto 10px; 
+        width: 16%;
+    }
+
+    p {
+        max-width: 238px;
+        margin: 0 auto;
+        @include clamp-font-size(14, 16);
+        line-height: 1.2;
+    }
+}
