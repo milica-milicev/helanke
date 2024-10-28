@@ -4,7 +4,7 @@
 html, body {
 	@include font-smoothing(antialiased);
 	height: 100%;
-	overflow-x: hidden;
+	// overflow-x: hidden;
 }
 
 html {
@@ -47,4 +47,9 @@ html {
 			width: 60%;
 		}
 	}
+}
+
+
+.product_title {
+	text-transform: uppercase;
 }

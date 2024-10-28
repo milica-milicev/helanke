@@ -27,11 +27,6 @@
                     <span>Helanke za trudnice</span>
                 </a>
             </div>
-
-            <!-- <div class="category-item category-item--soon">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/top.webp" alt="">
-                <span>Kratke Helanke</span>
-            </div>  -->
         </div>
     </div>
 </div>
