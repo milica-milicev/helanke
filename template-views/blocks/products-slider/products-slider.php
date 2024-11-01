@@ -1,6 +1,6 @@
 <div class="products-slider">
-    <div class="section-head">
-        <h2 class="section-head__title">Najpopularnije</h2>
+    <div class="products-slider__head">
+        <h2 class="section-title products-slider__title">Najpopularnije</h2>
     </div>
     
     <div class="js-swiper-products swiper">

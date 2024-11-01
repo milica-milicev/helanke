@@ -1,29 +1,32 @@
 <div class="categories">
     <div class="container">
+        <div class="categories__header">
+            <h2 class="section-title categories__title">Shop The Essentials</h2>
+        </div>
         <div class="categories__container">
-            <div class="category-item">
+            <div class="categories__item">
                 <a href="javascript:;">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/leggings.webp" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/helanke.jpg" alt="">
                     <span>Helanke</span>
                 </a>
             </div>
-            <div class="category-item">
+            <div class="categories__item">
                 <a href="javascript:;">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/top.webp" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/topovi.jpg" alt="">
                     <span>Gornji delovi - Topovi</span>
                 </a>
             </div>
 
-            <div class="category-item">
+            <div class="categories__item">
                 <a href="javascript:;">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/kompleti.webp" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/kompleti.jpg" alt="">
                     <span>Kompleti za trening</span>
                 </a>
             </div>
 
-             <div class="category-item category-item--soon">
+             <div class="categories__item categories__item--soon">
                 <a href="javascript:;">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/top.webp" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/trudnice.jpg" alt="">
                     <span>Helanke za trudnice</span>
                 </a>
             </div>

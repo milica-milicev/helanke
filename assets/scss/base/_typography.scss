@@ -11,7 +11,7 @@ textarea {
 	color: $black;
 	font-size: 16px;
 	line-height: 1.5;
-	letter-spacing: 0.9px;
+	letter-spacing: 0.5px;
 }
 
 pre {
@@ -24,12 +24,13 @@ pre {
 }
 
 .section-title {
-	// font-family: $font-second;
 	color: $black;
 	line-height: 1.45;
-	font-weight: 700;
-	@include clamp-font-size(20, 33);
-	margin-bottom: clamp(1.25rem, 1rem + 1.25vw, 1.5rem);
+	font-weight: 800;
+	letter-spacing: -0.9px;
+	text-transform: uppercase;
+	@include clamp-font-size(20, 35);
+	margin-bottom: 30px;
 }
 
 /*--------------------------------------------------------------

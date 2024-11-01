@@ -4,57 +4,57 @@
 
 .categories__container {
     display: flex;
-    // justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    width: 100%;
 }
 
-.category-item {
-    flex: 33.3%;
-    max-width: 33.3%;
-    margin-right: 20px;
+.categories__item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 10px;
     margin-bottom: 30px;
+}
+
+.categories__item a {
     position: relative;
     overflow: hidden;
     transition: transform 0.4s ease-in-out; // Glađa tranzicija za celokupan item
+    border-radius: 4px;
+    padding-bottom: 125%;
+    display: block;
 
     span {
         position: absolute;
-        bottom: 24px;
+        bottom: 0;
         left: 0;
-        background-color: $orange;
+        max-width: 100%;
+        padding: 32px;
         color: $white;
-        font-size: 14px;
+        @include clamp-font-size(18, 23);
+        font-weight: 800;
         text-transform: uppercase;
-        display: block;
-        padding: 5px 12px;
-        transition: opacity 0.4s ease-in-out; // Dodaj tranziciju za naslov
-        opacity: 1;
     }
 
     img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
         width: 100%;
-        max-height: 525px;
         object-fit: cover;
-        border-radius: 10px;
         transition: transform 0.4s ease-in-out; // Dodaj tranziciju za sliku
         transform: scale(1);
     }
 
-    &:hover {
+    @include hover {
         img {
             transform: scale(1.03); // Zoom-in efekat na slici
         }
-
-        // span {
-        //     opacity: 0; // Nestajanje teksta prilikom hovera
-        // }
-    }
-
-    &:last-of-type {
-        margin-right: 0;
     }
 }
 
-.category-item--soon {
+.categories__item--soon {
     opacity: 0.4;
     pointer-events: none;
 }

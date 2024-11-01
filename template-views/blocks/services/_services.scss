@@ -1,27 +1,33 @@
 .services {
-    padding: 50px 0;
+    padding: 100px 0;
 }
 
 .services__container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
+    width: 100%;
+    margin: 0 -10px;
 }
 
-.service-item {
-    flex: 25%;
+.services__item {
+    flex: 0 0 25%;
     max-width: 25%;
     text-align: center;
+    padding: 0 10px;
     
     img {
-        margin: 0 auto 10px; 
-        width: 16%;
+        margin: 0 auto 25px;
+        width: 70px;
     }
 
     p {
-        max-width: 238px;
         margin: 0 auto;
-        @include clamp-font-size(14, 16);
-        line-height: 1.2;
+        max-width: 270px;
+        @include clamp-font-size(14, 18);
+        text-transform: uppercase;
+        line-height: 1.4;
+        font-weight: 800;
     }
 }
