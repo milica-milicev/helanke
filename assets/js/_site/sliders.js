@@ -14,7 +14,7 @@ const Sliders = {
 
             breakpoints: {
                 1025: {
-                    slidesPerView: 3.5,
+                    slidesPerView: 4.5,
                     spaceBetween: 20,
                 },
             },

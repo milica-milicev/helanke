@@ -1,6 +1,8 @@
 .hero {
     background-color: $black;
-    height: calc(100vh - 105px);
+    height: 100vh;
+    max-height: 800px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
