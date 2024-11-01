@@ -175,4 +175,16 @@ require get_template_directory() . '/inc/template-functions.php';
 // 	require get_template_directory() . '/inc/jetpack.php';
 // }
 
+/**
+ * Add woocommerce support in the theme
+ */
+function nm_theme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
+add_action( 'after_setup_theme', 'nm_theme_add_woocommerce_support' );
+
+/**
+ * Woocommerce disable css
+ */
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );

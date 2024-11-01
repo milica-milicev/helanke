@@ -30,9 +30,10 @@
                     $product_title = get_the_title($product_id);
                     $product_link = get_the_permalink($product_id);
                     $product_price = $product->get_price_html();
+                    $product_hover = get_field('hover_image',$product_id)
                     
                     // Povlačimo odgovarajuću hover sliku za trenutni proizvod
-                    $hover_image = $products[$hover_image_field_name];
+                    // $hover_image = $products[$hover_image_field_name];
 
                     ?>
                     <div class="product-slider__item swiper-slide">
@@ -42,9 +43,10 @@
                                 <img class="product-slider__img default-img" src="<?php echo $product_thumb; ?>" alt="">
                                 
                                 <!-- Hover slika proizvoda -->
-                                <?php if ($hover_image && isset($hover_image['url'])): ?>
-                                    <img class="product-slider__img hover-img" src="<?php echo $hover_image['url']; ?>" alt="<?php echo $hover_image['alt']; ?>">
-                                <?php endif; ?>
+                                <!-- <?php //if ($hover_image && isset($hover_image['url'])): ?>
+                                    <img class="product-slider__img hover-img" src="<?php //echo $hover_image['url']; ?>" alt="<?php echo $hover_image['alt']; ?>">
+                                <?php //endif; ?> -->
+                                <img class="product-slider__img hover-img" src="<?php echo $product_hover['url']; ?>" alt="">
                             </div>
                             <h2 class="product-slider__item-title"><?php echo $product_title; ?></h2>
                             <span class="product-slider__item-price"><?php echo $product_price; ?></span>

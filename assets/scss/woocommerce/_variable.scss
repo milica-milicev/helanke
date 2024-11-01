@@ -1,0 +1,38 @@
+.size-selector {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+
+    .variation {
+        padding: 10px 20px;
+        border: 1px solid $white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-weight: normal;
+        
+        &:hover {
+            border-color: #333;
+        }
+
+        &.selected {
+            border-color: $black;
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+
+        &.disabled {
+            text-decoration: line-through;
+            color: #ccc;
+            cursor: not-allowed;
+            background-color: #f2f2f2;
+            pointer-events: none;
+        }
+    }
+}
+
+.variations {
+    .label {
+        display: none;
+    }
+}
