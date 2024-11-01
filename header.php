@@ -17,9 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png"/>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
 
@@ -31,11 +29,6 @@
 	<header id="masthead" class="site-header">
 		<div class="container">
 			<div class="site-header__container">
-				<div class="site-header__branding">
-					<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="site-header__logo-img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?> Logo" title="<?php bloginfo( 'name' ); ?>">
-					</a>
-				</div>
 				<div class="site-header__nav">
 					<nav id="site-navigation" class="main-navigation">
 						<div class="main-navigation__menu-wrap js-navigation">
@@ -55,6 +48,11 @@
 							<span class="main-navigation__toggle-stripe"></span>
 						</button>
 					</nav><!-- #site-navigation -->
+				</div>
+				<div class="site-header__branding">
+					<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="site-header__logo-img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?> Logo" title="<?php bloginfo( 'name' ); ?>">
+					</a>
 				</div>
 			</div>
 		</div>

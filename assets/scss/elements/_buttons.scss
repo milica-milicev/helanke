@@ -6,7 +6,7 @@
 	font-family: $font-main;
 	background-color: $black;
 	color: $white;
-	padding: 12px 25px;
+	padding: 15px 20px;
 	transition: $dur $ease;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -30,7 +30,7 @@
 
 	@include hover {
 		background-color: $black;
-		border-color: $black;
+		border-color: $white;
 		color: $white;
 	}
 }

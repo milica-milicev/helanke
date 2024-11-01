@@ -108,18 +108,17 @@ a {
 	margin-bottom: 25px;
 
 	@include mq($md + 1, min) {
-		padding: 0 25px;
+		padding: 0 20px;
 		margin-bottom: 0;
 	}
 }
 
 .main-navigation__menu a {
 	font-family: $font-main;
-	font-weight: 600;
 	font-size: 16px;
-	line-height: 1.375;
-	// text-transform: uppercase;
-	color: $black;
+	text-transform: uppercase;
+	letter-spacing: 1.8px;
+	color: $white;
 	transition: color $dur $ease;
 	position: relative;
 	display: inline-block;
@@ -132,8 +131,12 @@ a {
 		will-change: transform;
 		display: block;
 		height: 2px;
-		background-color: $orange;
+		background-color: $white;
 		transition: transform $dur*1.3 $ease;
+	}
+
+	.is-sticky & {
+		color: $black;
 	}
 
 	@include hover {
