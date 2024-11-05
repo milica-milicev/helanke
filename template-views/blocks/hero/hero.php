@@ -7,6 +7,6 @@
         </div>
     </div>
     <div class="hero__image">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/_demo/hero.jpg" alt="">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/_demo/hero-1.jpg" alt="">
     </div>
 </div>
