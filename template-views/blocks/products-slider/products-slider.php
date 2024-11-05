@@ -57,9 +57,7 @@
                                     </a>
                                 </div>  
                                 <?php if ($product->is_on_sale()) : ?>
-                                    <figure>
-                                        <span class="sale-percent">-20%</span>
-                                    </figure>
+                                    <span class="product-slider__item-tag">-20%</span>
                                 <?php endif; ?>
                             </div>
                             <h2 class="product-slider__item-title"><a href="<?php echo $product_link; ?>"><?php echo $product_title; ?></a></h2>
