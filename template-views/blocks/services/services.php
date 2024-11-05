@@ -1,5 +1,8 @@
 <div class="services">
     <div class="container">
+    <div class="services__head">
+            <h2 class="services__head-title section-title section-title--center">servisi naslov</h2>
+        </div>
         <div class="services__container">
             <div class="services__item">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/support.png" alt="">

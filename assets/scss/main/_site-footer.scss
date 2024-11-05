@@ -3,15 +3,16 @@
 --------------------------------------------------------------*/
 .site-footer {
 	background-color: $snow;
-	padding: 100px 0 0;
+	padding-top: 70px;
 }
 
 .site-footer__container {
 	display: flex;
+	padding-bottom: 40px;
 }
 
 .site-footer__item {
-	flex: 33.3%;
+	flex: 0 0 33.3%;
 	max-width: 33.3%;
 
 	span,
@@ -52,10 +53,14 @@
 }
 
 .site-footer__item-media {
-	img {
-		width: 5%;
-		margin-bottom: 0;
+	display: flex;
+	align-items: center;
+
+	span {
+		font-size: 22px;
 		transition: $dur $ease;
+		display: inline-flex;
+		margin-right: 20px;
 
 		@include hover {
 			opacity: .6;
@@ -64,19 +69,20 @@
 }
 
 .footer-bottom {
-	padding: 50px 0 20px;
+	padding: 20px 0;
+	border-top: 1px solid rgba($black, 0.1);
 }
 
 .site-footer__copyright {
 	font-family: $font-main;
-	font-weight: 600;
-	font-size: 0.875rem;
+	font-size:  14px;
 	line-height: 1.35;
-	color: $black;
+	color: rgba($black, 0.8);
+	text-align: center;
 
 	a {
 		@include hover {
-			opacity: .6;
+			opacity: 0.6;
 		}
 	}
 }

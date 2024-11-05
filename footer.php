@@ -20,7 +20,7 @@
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="">
 					<span>Velora doo</span>
 					<a href="tel:0603214261">Telefon: 0603214261</a>
-					<a href="mailto:info@lora.rs">e-mail: info@lora.rs</a>
+					<a href="mailto:info@lora.rs">e-mail: info@velora.rs</a>
 					<span>PIB: 111111234</span>
 					<span>Matični broj: 14369536</span>
 				</div>
@@ -38,16 +38,15 @@
 				<div class="site-footer__item">
 					<h2>Pratite nas</h2>
 					<div class="site-footer__item-media">
-						<a href="javascript:;"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/instagram.png" alt=""></a>
-						<a href="javascript:;"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/facebook.png" alt=""></a>
+						<a href="javascript:;"><span class="font-instagram"></span></a>
+						<a href="javascript:;"><span class="font-facebook"></span></a>
 					</div>
-					
 				</div>
 			</div>
 		</div>
 		<div class="footer-bottom">
 			<div class="container">
-				<p class="site-footer__copyright">&copy; <?php echo date('Y'); ?> All Rights Reserved <a href="javascript:;">NV Studio.</a></p>
+				<p class="site-footer__copyright">Sva prava zadržana &copy; <?php echo date('Y'); ?> Velora</p>
 			</div>
 		</div>
 	</footer><!-- #colophon -->

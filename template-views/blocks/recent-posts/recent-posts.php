@@ -38,9 +38,16 @@
                     endif;
                     ?>
                 </div>
-                <div class="recent-posts__slider-nav swiper-pagination"></div>
+            </div>
+            <div class="recent-posts__nav-container">
+                <!-- Strelice za navigaciju -->
+                <div class="recent-posts__nav-arrow recent-posts__nav-prev font-chevron-left swiper-button-prev-posts"></div>
+                <!-- <div class="recent-posts__nav-pagination swiper-posts-pagination"></div> -->
+                <div class="recent-posts__nav-arrow recent-posts__nav-next font-chevron-right swiper-button-next-posts"></div>
+            </div>
+            <div class="recent-posts__cta">
+                <a href="javascript:;" class="btn">Pogledaj sve</a>
             </div>
         </div>
     </div>
-    
 </div>

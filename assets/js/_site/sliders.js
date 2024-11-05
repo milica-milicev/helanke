@@ -24,9 +24,14 @@ const Sliders = {
             slidesPerView: 1,
             spaceBetween: 30,
             pagination: {
-              el: ".swiper-pagination",
+              el: ".swiper-posts-pagination",
               clickable: true,
             },
+
+            navigation: {
+              nextEl: '.swiper-button-next-posts',
+              prevEl: '.swiper-button-prev-posts',
+          },
     
             breakpoints: {
               767: {

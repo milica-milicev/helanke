@@ -3,7 +3,7 @@
         <h2 class="section-title products-slider__title">Najpopularnije</h2>
     </div>
     
-    <div class="js-swiper-products swiper">
+    <div class="products-slider__wrapper js-swiper-products swiper">
         <div class="swiper-wrapper">
             <?php
             // Povlačimo niz proizvoda iz ACF-a
@@ -75,5 +75,8 @@
         <!-- Strelice za navigaciju -->
         <div class="product-slider__nav product-slider__nav-prev font-chevron-left swiper-button-prev-products"></div>
         <div class="product-slider__nav product-slider__nav-next font-chevron-right swiper-button-next-products"></div>
+    </div>
+    <div class="product-slider__cta">
+        <a href="javascript:;" class="btn">Pogledaj sve proizvode</a>
     </div>
 </div>

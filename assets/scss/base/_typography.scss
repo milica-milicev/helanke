@@ -9,9 +9,9 @@ optgroup,
 textarea {
 	font-family: $font-main;
 	color: $black;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 1.5;
-	letter-spacing: 0.5px;
+	letter-spacing: -0.5px;
 }
 
 pre {
@@ -30,11 +30,16 @@ pre {
 	letter-spacing: -0.9px;
 	text-transform: uppercase;
 	@include clamp-font-size(20, 35);
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .section-title--center {
 	text-align: center;
+}
+
+.section-descr {
+	margin-bottom: 25px;
+	color: rgba($black, 0.8);
 }
 
 /*--------------------------------------------------------------

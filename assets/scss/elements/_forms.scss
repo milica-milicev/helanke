@@ -36,21 +36,21 @@ input[type='datetime-local'],
 input[type='color'],
 textarea {
 	width: 100%;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     margin-top: 2px;
     transition: $dur $ease;
-    padding: 10px 21px;
-	background-color: $white-smoke;
+    padding: 15px 21px;
+	background-color: $grey-light;
 	margin-bottom: 20px;
+	border-radius: 4px;
 
 	&:focus,
 	&:active {
-		border: 1px solid $black;
+		border: 2px solid $black;
 	}
 
 	&:invalid {
 		border: 1px solid #dc3232;
-		background-color: $white;
 	}
 }
 

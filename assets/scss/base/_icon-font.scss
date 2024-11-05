@@ -31,11 +31,17 @@
 	@if $filename == chevron-right {
 		$char: "\E003";
 	}
-	@if $filename == search {
+	@if $filename == facebook {
 		$char: "\E004";
 	}
-	@if $filename == user {
+	@if $filename == instagram {
 		$char: "\E005";
+	}
+	@if $filename == search {
+		$char: "\E006";
+	}
+	@if $filename == user {
+		$char: "\E007";
 	}
 
 	@return $char;
@@ -60,6 +66,12 @@
 }
 .font-chevron-right {
 	@include font(chevron-right);
+}
+.font-facebook {
+	@include font(facebook);
+}
+.font-instagram {
+	@include font(instagram);
 }
 .font-search {
 	@include font(search);
