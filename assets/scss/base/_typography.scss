@@ -33,13 +33,8 @@ pre {
 	margin-bottom: 30px;
 }
 
-.section-head {
-	margin-bottom: 40px;
+.section-title--center {
 	text-align: center;
-}
-
-.section-head__title {
-	@include clamp-font-size(22, 40);
 }
 
 /*--------------------------------------------------------------

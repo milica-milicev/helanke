@@ -1,46 +1,8 @@
-.recente-blogs {
-    padding: 50px 0;
-
-    @include mq($md) {
-        padding: 30px 0 0;
-        border: 0;
-    }
-}
-.recente-blogs__slider {
-    img {
-        width: 100%;
-    }
-
-    h4 {
-        font-weight: 600;
-        font-size: 18px;
-        letter-spacing: 0.32px;
-        color: $black;
-        margin: 20px 0;
-    }
+.recent-posts {
+    padding: 40px 0;
 }
 
-.recente-blogs__right {
-    .swiper-pagination {
-        position: relative;
-        margin-top: 60px;
-    }
-
-    .swiper-pagination-bullet-active {
-        background-color: $orange;
-    }
-
-    @include mq($lg) {
-        flex: 100%;
-        max-width: 100%;
-
-        .swiper-pagination {
-            margin-top: 30px;
-        }
-    }
-}
-
-.recente-blogs__container {
+.recent-posts__container {
     display: flex;
     justify-content: space-between;
 
@@ -49,28 +11,56 @@
     }
 }
 
-.recente-blog__single {
+.recent-posts__slider {
+    margin-bottom: 60px;
+}
+
+.recent-posts__slider-nav {
+    position: relative;
+
+    .swiper-pagination-bullet-active {
+        background-color: $orange;
+    }
+}
+
+.recent-posts__item {
+    @include mq($md) {
+        margin-bottom: 30px;
+    }
+}
+
+.recent-posts__item-img-wrap {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 80%;
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+
     img {
-        min-height: 361px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 100%;
         object-fit: cover;
+        transition: transform 0.4s ease-in-out;
+        transform: scale(1);
+        will-change: transform;
+        backface-visibility: hidden;
     }
 
-    h4 {
-        margin: 30px 0 20px;
-    }
-
-    .btn {
-        margin-top: 30px;
-    }
-
-    @include mq($md) {
-        flex: 100%;
-        max-width: 100%;
-        margin-bottom: 60px;
-
+    @include hover {
         img {
-            min-height: 261px;
+            transform: scale(1.03);
         }
     }
+}
+
+.recent-posts__item-title {
+    @include clamp-font-size(14, 16);
+    line-height: 1.5;
+    margin-bottom: 8px;
+    font-weight: 800;
 }

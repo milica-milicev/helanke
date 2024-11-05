@@ -1,5 +1,5 @@
 .banner-box {
-    padding: 50px 0;
+    padding: 40px 0;
 }
 
 .banner-box__wrap {
@@ -7,23 +7,24 @@
 }
 
 .banner-box__img {
-    img {
-        border-radius: 10px;
-    }
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .banner-box__content {
     position: absolute;
     top: 50%;
-    left: 10%;
     transform: translateY(-50%);
+    left: 10%;
     max-width: 520px;
+}
 
-    h2 {
-        @include clamp-font-size(30, 60);
-        font-weight: 600;
-        color: $white;
-        margin-bottom: 30px;
-        line-height: 1.2;
-    }
+.banner-box__title {
+    @include clamp-font-size(30, 60);
+    text-transform: uppercase;
+    font-weight: 800;
+    color: $white;
+    margin-bottom: 25px;
+    line-height: 1.125;
+    letter-spacing: -1.5px;
 }
