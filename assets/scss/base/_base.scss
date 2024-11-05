@@ -31,24 +31,3 @@ html {
         padding: 0 15px;
     }
 }
-
-.section-head {
-	margin-bottom: 40px;
-	text-align: center;
-}
-
-.section-head__title {
-	@include clamp-font-size(22, 40);
-}
-
-.product-icons {
-	a {
-		img {
-			width: 60%;
-		}
-	}
-}
-
-.hero__breadcrumbs {
-	margin-bottom: 30px;
-}

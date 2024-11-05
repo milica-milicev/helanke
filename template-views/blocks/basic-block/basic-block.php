@@ -8,6 +8,6 @@
 
 <div class="basic-block">
 	<div class="container">
-		<img class="product-slider__img default-img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/Screenshot_18.png" alt="Vesey Leggings V2">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/Screenshot_18.png" alt="Vesey Leggings V2">
 	</div>
 </div><!-- .basic-block -->

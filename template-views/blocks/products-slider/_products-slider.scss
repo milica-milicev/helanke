@@ -1,42 +1,67 @@
 .products-slider {
-    padding: 50px 0 100px 80px;
-    margin-left: calc(50% - 844px);
+    padding: 50px 0 100px;
+    margin-left: calc(50% - 764px);
+    position: relative;
 
-    .swiper-button-next, 
-    .swiper-button-prev {
-        width: 60px;
-        height: 60px;
-        background-color: $white !important;
-        color: $black;
-        border-radius: 50%;
-        right: 12%;
-        transition: $dur $ease;
-        transform: scale(1);
+    // @include mq($xxxl) {
+    //     margin-left: auto;
+    // }
 
-        &::after {
-            font-size: 28px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    // @include mq($xl) {
+    //     padding: 0 25px;
+    // }
 
-        @include hover {
-            transform: scale(1.1);
-        }
+    // @include mq($md) {
+    //     padding: 0 15px;
+    // }
+}
+
+.product-slider__nav-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    max-width: 1520px;
+}
+
+.product-slider__nav {
+    width: 60px;
+    height: 60px;
+    background-color: $white;
+    color: $black;
+    border-radius: 50%;
+    transition: $dur $ease;
+    transform: scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    will-change: transform;
+    backface-visibility: hidden;
+    box-shadow: 0 2px 8px rgba($black, 0.2);
+
+    @include hover {
+        transform: scale(1.1);
     }
 
-    @include mq($xxxl) {
-        margin-left: auto;
+    &.swiper-button-disabled {
+        opacity: 0;
+        visibility: hidden;
     }
+}
 
-    @include mq($xl) {
-        padding: 0 25px;
-    }
+.product-slider__nav-prev {
+    margin-left: -30px;
+}
 
-    @include mq($md) {
-        padding: 0 15px;
-    }
+.product-slider__nav-next {
+    margin-right: -30px;
 }
 
 .product-slider__item-wrap {
@@ -48,99 +73,88 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    padding-bottom: 125%;
+    border-radius: 4px;
+    display: block;
+
+    @include hover {
+        .product-slider__img--default {
+            opacity: 0;
+        }
+    
+        .product-slider__img--hover {
+            opacity: 1;
+        }
+    }
 }
 
 .product-slider__img {
+    position: absolute;
+    left: 0;
+    top: 0;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     transition: opacity 0.4s ease-in-out;
-    border-radius: 10px;
-    max-height: 586px;
     object-fit: cover;
-}
-
-.default-img {
     opacity: 1;
 }
 
-.hover-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    width: 100%;
-    height: auto;
-}
-
-.product-slider__img-wrapper:hover .hover-img {
-    opacity: 1;
-}
-
-.product-slider__img-wrapper:hover .default-img {
+.product-slider__img--hover {
     opacity: 0;
 }
 
 .product-slider__item {
     overflow: hidden;
     position: relative;
+}
 
-    &:hover {
-        .product-icons {
-            display: flex;
+.product-slider__item-action {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 10;
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba($black, 0.2);
+    transition: background-color 0.3s ease;
+
+    @include hover {
+        span {
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
         }
     }
 
-    .product-icons {
-        display: none;
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    span {
+        opacity: 0;
         position: absolute;
-        right: 10px;
-        bottom: 10px;
-        z-index: 10;
-
-        a {
-            margin-left: 10px;
-            color: $black;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background-color: $white;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-            margin-bottom: 10px;
-
-            &:hover {
-                background-color: #f8f8f8;
-
-                .icon-text {
-                    display: block;
-                }
-            }
-
-            img {
-                width: 24px;
-                height: 24px;
-            }
-
-            .icon-text {
-                display: none;
-                position: absolute;
-                right: 55px;
-                background-color: $black;
-                color: $white;
-                font-size: 12px;
-                padding: 5px 10px;
-                border-radius: 5px;
-                white-space: nowrap;
-                transition: $dur $ease;
-            }
-        }
+        right: 55px;
+        background-color: $black;
+        color: $white;
+        font-size: 11px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+        transition: $dur $ease;
+        transform: translateX(10px);
+        visibility: hidden;
     }
+
 }
 
 .product-slider__item-title {
@@ -166,17 +180,22 @@
 
 .sale-percent {
     position: absolute;
-    top: 3px;
-    right: -19px;
-    font-size: 12px;
+    top: -32px;
+    right: -40px;
+    width: 90px;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing: 1px;
+    border-radius: 4px;
     padding: 5px 12px;
     transform: rotate(45deg);
-    width: 54px;
+    transform-origin: left bottom;
     background-color: $orange;
     color: $white;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 800;
 }
 
 .new {

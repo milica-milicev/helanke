@@ -22,8 +22,20 @@
 @function font-char($filename) {
 	$char: "";
 
-	@if $filename == search {
+	@if $filename == cart {
 		$char: "\E001";
+	}
+	@if $filename == chevron-left {
+		$char: "\E002";
+	}
+	@if $filename == chevron-right {
+		$char: "\E003";
+	}
+	@if $filename == search {
+		$char: "\E004";
+	}
+	@if $filename == user {
+		$char: "\E005";
 	}
 
 	@return $char;
@@ -40,7 +52,19 @@
 	}
 }
 
+.font-cart {
+	@include font(cart);
+}
+.font-chevron-left {
+	@include font(chevron-left);
+}
+.font-chevron-right {
+	@include font(chevron-right);
+}
 .font-search {
 	@include font(search);
+}
+.font-user {
+	@include font(user);
 }
 
