@@ -4,7 +4,7 @@ import Swiper from "swiper/bundle";
 const Sliders = {
     init: function () {
         var swiperProducts = new Swiper('.js-swiper-products', {
-            slidesPerView: 2,
+            slidesPerView: 2.5,
             spaceBetween: 10,
 
             navigation: {
@@ -13,16 +13,16 @@ const Sliders = {
             },
 
             breakpoints: {
-                1025: {
-                    slidesPerView: 4.5,
-                    spaceBetween: 20,
-                },
-            },
+              767: {
+                  slidesPerView: 4.5,
+                  spaceBetween: 20,
+              },
+          }
         });
 
         var swiperBlog = new Swiper('.js-swiper-blog', {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 20,
             pagination: {
               el: ".swiper-posts-pagination",
               clickable: true,
@@ -35,10 +35,6 @@ const Sliders = {
     
             breakpoints: {
               767: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              1025: {
                 slidesPerView: 3,
                 spaceBetween: 20,
               },

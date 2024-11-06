@@ -8,13 +8,17 @@
     //     margin-left: auto;
     // }
 
-    // @include mq($xl) {
-    //     padding: 0 25px;
-    // }
+    @include mq($xl) {
+        padding: 40px 0 40px 25px;
+    }
 
-    // @include mq($md) {
-    //     padding: 0 15px;
-    // }
+    @include mq($md) {
+        padding: 40px 0 40px 15px;
+    }
+
+    @include mq($sm) {
+        padding: 20px 0 20px 15px;
+    }
 }
 
 .products-slider__wrapper {
@@ -61,6 +65,16 @@
     &.swiper-button-disabled {
         opacity: 0;
         visibility: hidden;
+    }
+
+    @include mq($xl) {
+        width: 50px;
+        height: 50px;
+    }
+
+    @include mq($md) {
+        width: 40px;
+        height: 40px;
     }
 }
 

@@ -32,7 +32,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	background-color: $black;
+	background-color: $white;
 	transition: transform $dur $ease;
 	will-change: transform;
 	transform-origin: left;
@@ -52,6 +52,8 @@ a {
 	}
 
 	.is-active & {
+		background-color: $black;
+
 		&:nth-child(1) {
 			transform: rotate(45deg);
 		}
@@ -63,6 +65,10 @@ a {
 		&:nth-child(3) {
 			transform: rotate(-45deg);
 		}
+	}
+
+	.is-sticky & {
+		background-color: $black;
 	}
 }
 
@@ -79,7 +85,7 @@ a {
 		transition: transform $dur $ease, opacity $dur $dur $ease, visibility $dur $dur $ease;
 		transform: translateX(100%);
 		will-change: transform;
-		padding: 80px 20px 0;
+		padding: 120px 20px 0;
 
 		&.is-active {
 			opacity: 1;
@@ -136,18 +142,26 @@ a {
 		will-change: transform;
 		display: block;
 		height: 1px;
-		background-color: $black;
+		background-color: $white;
 		transition: transform $dur*1.3 $ease;
 	}
 
 	.is-sticky & {
 		color: $black;
+
+		&::after {
+			background-color: $black;
+		}
 	}
 
 	@include hover {
 		&::after {
 			transform: scaleX(1);
 		}
+	}
+
+	@include mq($md) {
+		color: $black;
 	}
 }
 

@@ -21,6 +21,11 @@
 		border-color: $black;
 		color: $black;
 	}
+
+	@include mq($md) {
+		padding: 13px 17px;
+		min-width: 150px;
+	}
 }
 
 .btn--white {

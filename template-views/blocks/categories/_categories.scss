@@ -1,5 +1,9 @@
 .categories {
-    padding: 40px 0;
+    padding: 20px 0;
+
+    @include mq($sm + 1, min) {
+        padding: 40px 0;
+    }
 }
 
 .categories__container {
@@ -10,9 +14,20 @@
 }
 
 .categories__item {
-    flex: 0 0 25%;
-    max-width: 25%;
+    margin-bottom: 25px;
+    flex: 0 0 50%;
+    max-width: 50%;
     padding: 0 10px;
+
+    &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+    }
+
+    @include mq($md + 1, min) {
+        flex: 0 0 25%;
+        max-width: 25%;
+        margin-bottom: 0;
+    }
 }
 
 .categories__item a {
@@ -28,9 +43,9 @@
         bottom: 0;
         left: 0;
         max-width: 100%;
-        padding: 32px;
+        padding: 15px;
         color: $white;
-        @include clamp-font-size(18, 23);
+        @include clamp-font-size(17, 23);
         font-weight: 800;
         text-transform: uppercase;
     }
@@ -51,6 +66,18 @@
     @include hover {
         img {
             transform: scale(1.03); // Zoom-in efekat na slici
+        }
+    }
+
+    @include mq($md + 1, min) {
+        span {
+            padding: 20px;
+        }
+    }
+
+    @include mq($xl + 1, min) {
+        span {
+            padding: 32px;
         }
     }
 }
