@@ -1,5 +1,11 @@
 .recent-posts {
     padding: 40px 0;
+
+    @include mq($lg) {
+        .container {
+            padding-right: 0;
+        }
+    }
 }
 
 .recent-posts__container {
@@ -22,16 +28,23 @@
 .recent-posts__nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: absolute;
-    top: 30%;
+    top: 0;
+    transform: translateY(-50%);
     width: 100%;
     z-index: 1;
+    right: 10px;
+
+    @include mq($md) {
+        transform: translateY(-100%);
+        top: -15px;
+    }
 }
 
 .recent-posts__nav-arrow {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: $black;
     color: $white;
     border-radius: 50%;
@@ -46,43 +59,50 @@
     will-change: transform;
     backface-visibility: hidden;
     box-shadow: 0 2px 8px rgba($black, 0.2);
+    margin-right: 10px;
 
     @include hover {
         transform: scale(1.1);
     }
 
-    &.swiper-button-disabled {
-        opacity: 0;
-        visibility: hidden;
+    // &.swiper-button-disabled {
+    //     opacity: 0.9;
+    // }
+
+    @include mq($xl) {
+        width: 50px;
+        height: 50px;
+    }
+
+    @include mq($md) {
+        width: 40px;
+        height: 40px;
     }
 }
 
 .recent-posts__nav-prev {
-    margin-left: -15px;
+    // margin-left: 30px;
 
-    @include mq($md + 1, min) {
-        margin-left: -25px;
-    }
+    // @include mq($xl) {
+    //     margin-left: -25px;
+    // }
+
+    // @include mq($md) {
+    //     margin-left: -15px;
+    // }
 }
 
 .recent-posts__nav-next {
-    margin-right: -15px;
+    // margin-right: 30px;
 
-    @include mq($md + 1, min) {
-        margin-right: -25px;
-    }
+    // @include mq($xl) {
+    //     margin-right: -25px;
+    // }
+
+    // @include mq($lg) {
+    //     margin-right: 15px;
+    // }
 }
-
-// .recent-posts__nav-pagination {
-//     position: relative;
-//     width: auto !important;
-//     line-height: 1;
-
-//     .swiper-pagination-bullet-active {
-//         background-color: $orange;
-//     }
-// }
-
 
 .recent-posts__item {
     @include mq($md) {
