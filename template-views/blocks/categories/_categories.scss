@@ -6,11 +6,10 @@
     }
 }
 
-.categories__container {
+.categories__row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -10px;
-    width: 100%;
 }
 
 .categories__item {

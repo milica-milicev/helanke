@@ -58,11 +58,19 @@
 }
 
 .recent-posts__nav-prev {
-    margin-left: -25px;
+    margin-left: -15px;
+
+    @include mq($md + 1, min) {
+        margin-left: -25px;
+    }
 }
 
 .recent-posts__nav-next {
-    margin-right: -25px;
+    margin-right: -15px;
+
+    @include mq($md + 1, min) {
+        margin-right: -25px;
+    }
 }
 
 // .recent-posts__nav-pagination {

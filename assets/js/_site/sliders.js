@@ -21,7 +21,7 @@ const Sliders = {
         });
 
         var swiperBlog = new Swiper('.js-swiper-blog', {
-            slidesPerView: 1,
+            slidesPerView: 1.3,
             spaceBetween: 20,
             pagination: {
               el: ".swiper-posts-pagination",

@@ -3,7 +3,7 @@
         <div class="categories__header">
             <h2 class="section-title categories__title">Shop The Essentials</h2>
         </div>
-        <div class="categories__container">
+        <div class="categories__row">
             <div class="categories__item">
                 <a href="javascript:;">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/helanke.jpg" alt="">
