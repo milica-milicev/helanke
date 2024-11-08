@@ -90,7 +90,7 @@
     }
 }
 
-.recent-posts__item-img-wrap {
+.post-item__img {
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -117,16 +117,20 @@
             transform: scale(1.03);
         }
     }
+
+    @include mq($md) {
+        margin-bottom: 15px;
+    }
 }
 
-.recent-posts__item-title {
+.post-item__title {
     @include clamp-font-size(14, 16);
     line-height: 1.5;
     margin-bottom: 8px;
     font-weight: 800;
 }
 
-.recent-posts__item-excerpt {
+.post-item__excerpt {
     color: rgba($black, 0.8);
 }
 

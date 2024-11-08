@@ -24,12 +24,12 @@
 
                     if ($recent_posts->have_posts()) :
                         while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
-                            <div class="recent-posts__item swiper-slide">
-                                <a class="recent-posts__item-img-wrap" href="<?php the_permalink(); ?>">
-                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'recente-posts'); ?>" alt="<?php the_title(); ?>">
+                            <div class="post-item recent-posts__item swiper-slide">
+                                <a class="post-item__img recent-posts__item-img-wrap" href="<?php the_permalink(); ?>">
+                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'recent-posts'); ?>" alt="<?php the_title(); ?>">
                                 </a>
-                                <h4 class="recent-posts__item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                                <div class="recent-posts__item-excerpt">
+                                <h4 class="post-item__title recent-posts__item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                <div class="post-item__excerpt recent-posts__item-excerpt">
                                     <?php the_excerpt(); ?>
                                 </div>
                             </div>

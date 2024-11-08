@@ -13,33 +13,22 @@
             $all_posts = new WP_Query($args);
 
             if ($all_posts->have_posts()) :
-                while ($all_posts->have_posts()) : $all_posts->the_post();
-            ?>
-                    <div class="blog-item">
-                        <div class="blog-item__img">
-                            <a href="<?php the_permalink(); ?>">
-                                <img src="<?php the_post_thumbnail_url('blog-item'); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-item__content">
-                            <div class="blog-item__content-wrap">
-                                <h3><?php the_title(); ?></h3>
-                                <div class="entry-content">
-                                    <?php the_excerpt(); ?>
-                                </div>
-                            </div>
-                            <!-- <div class="blog-item__btn">
-                                <a class="btn" href="<?php the_permalink(); ?>">Pročitajte više</a>
-                            </div> -->
+                while ($all_posts->have_posts()) : $all_posts->the_post(); ?>
+                    <div class="post-item blog__item">
+                        <a class="post-item__img" href="<?php the_permalink(); ?>">
+                            <img src="<?php the_post_thumbnail_url('blog-item'); ?>" alt="<?php the_title(); ?>">
+                        </a>
+                        <h4 class="post-item__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                        <div class="post-item__excerpt">
+                            <?php the_excerpt(); ?>
                         </div>
                     </div>
-            <?php
+                <?php
                 endwhile;
 
                 // Uslov za prikazivanje paginacije
-                if ($all_posts->found_posts > 3) :
-            ?>
-                    <div class="pagination">
+                if ($all_posts->found_posts > 3) : ?>
+                    <div class="blog__nav">
                         <?php
                         // Paginacija
                         echo paginate_links(array(
@@ -49,12 +38,11 @@
                         ));
                         ?>
                     </div>
-            <?php
+                <?php
                 endif;
                 wp_reset_postdata();
             endif;
             ?>
         </div>
-        
     </div>
 </div>
