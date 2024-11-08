@@ -52,8 +52,9 @@
                                         <span class="icon-text">Add to Favorite</span>
                                     </a> -->
                                     <a href="javascript:;" class="product-slider__item-action">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/cart.svg" alt="Add to Cart">
-                                        <span>Add to Cart</span>
+                                        <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/cart.svg" alt="Add to Cart"> -->
+                                        <span class="product-slider__item-action-icon icon font-cart"></span>
+                                        <span class="product-slider__item-action-text">Add to Cart</span>
                                     </a>
                                 </div>  
                                 <?php if ($product->is_on_sale()) : ?>

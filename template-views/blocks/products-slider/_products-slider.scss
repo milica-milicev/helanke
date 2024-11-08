@@ -173,19 +173,19 @@
     transition: background-color 0.3s ease;
 
     @include hover {
-        span {
+        .product-slider__item-action-text {
             opacity: 1;
             transform: translateX(0);
             visibility: visible;
         }
     }
 
-    img {
-        width: 24px;
-        height: 24px;
-    }
+    // img {
+    //     width: 24px;
+    //     height: 24px;
+    // }
 
-    span {
+    .product-slider__item-action-text {
         opacity: 0;
         position: absolute;
         right: 55px;

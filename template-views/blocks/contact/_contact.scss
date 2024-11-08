@@ -36,7 +36,7 @@
 
 .contact-item__title {
     margin-bottom: 16px;
-    @include clamp-font-size(28, 48);
+    @include clamp-font-size(20, 40);
     text-transform: uppercase;
     font-weight: 800;
     line-height: 1.125;
