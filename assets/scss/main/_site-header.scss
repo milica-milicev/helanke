@@ -57,10 +57,15 @@
 	background-color: $white;
 	border: none;
 	position: relative;
+	transition: $dur $ease;
 
 	.icon {
 		display: inline-flex;
 		color: $black;
+	}
+
+	.is-sticky & {
+		background-color: $white-smoke;
 	}
 
 	@include mq($md) {
