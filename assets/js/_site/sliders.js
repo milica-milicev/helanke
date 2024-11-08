@@ -17,12 +17,12 @@ const Sliders = {
                   slidesPerView: 2.3
               },
               767: {
-                  slidesPerView: 2.5,
+                  slidesPerView: 3.3,
                   spaceBetween: 20,
               },
-              991: {
-                  slidesPerView: 3.3
-              },
+            //   992: {
+            //       slidesPerView: 3.3
+            //   },
               1199: {
                   slidesPerView: 4.3
               },
@@ -47,12 +47,12 @@ const Sliders = {
                 slidesPerView: 2.3
             },
             767: {
-                slidesPerView: 2.5,
+                slidesPerView: 3,
                 spaceBetween: 20,
             },
-            991: {
-                slidesPerView: 3
-            }
+            // 992: {
+            //     slidesPerView: 3
+            // }
           }
         });
     }
