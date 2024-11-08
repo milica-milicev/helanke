@@ -18,11 +18,13 @@
 			<div class="site-footer__container">
 				<div class="site-footer__item">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="">
-					<span>Velora doo</span>
-					<a href="tel:0603214261">Telefon: 0603214261</a>
-					<a href="mailto:info@lora.rs">e-mail: info@velora.rs</a>
-					<span>PIB: 111111234</span>
-					<span>Matični broj: 14369536</span>
+					<ul>
+						<li><span>Velora doo</span></li>
+						<li><a href="tel:0603214261">Telefon: 0603214261</a></li>
+						<li><a href="mailto:info@lora.rs">e-mail: info@velora.rs</a></li>
+						<li><span>PIB: 111111234</span></li>
+						<li><span>Matični broj: 14369536</span></li>
+					</ul>
 				</div>
 				<div class="site-footer__item">
 					<h2>Informacije</h2>

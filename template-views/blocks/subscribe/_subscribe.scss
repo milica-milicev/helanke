@@ -1,13 +1,17 @@
 .subscribe {
-    padding: 40px 0 80px;
+    padding: 20px 0 40px;
+
+    @include mq($md + 1, min) {
+        padding: 40px 0 80px;
+    }
 }
 
 .subscribe__container {
     background-color: $snow;
     border-radius: 4px;
+    overflow: hidden;
     
     @include mq($md + 1, min) {
-        overflow: hidden;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -23,7 +27,7 @@
 
 .subscribe__img-wrap {
     position: relative;
-    padding-bottom: 60%;
+    padding-bottom: 50%;
 
     img {
         position: absolute;

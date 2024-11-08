@@ -9,7 +9,7 @@
     position: relative;
     margin-bottom: 20px;
 
-    @include mq($sm + 1, min) {
+    @include mq($md + 1, min) {
         margin-bottom: 40px;
     }
 }
