@@ -1,44 +1,71 @@
 .contact {
-    padding: 100px 0;
+    padding: 20px 0 40px;
 
-    @include mq($md) {
-        padding: 50px 0;
+    @include mq($md + 1, min) {
+        padding: 40px 0 60px;
     }
 }
 
 .contact__container {
-    display: flex;
-    margin: 0 -10px;
-
-    @include mq($md) {
-        display: block;
+    @include mq($md + 1, min) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
     }
 }
 
-.contact-item {
-    flex: 50%;
-    max-width: 50%;
-    padding: 0 10px;
-
-    p {
-        max-width: 583px;
-        @include clamp-font-size(14, 16);
-        line-height: 1.2;
+.contact__col {
+    &:first-of-type {
+        margin-bottom: 30px;
     }
 
-    @include mq($md) {
-        flex: 100%;
-        max-width: 100%;
+    @include mq($md + 1, min) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 10px;
 
         &:first-of-type {
-            margin-bottom: 30px;
+            margin-bottom: 0;
         }
     }
 }
 
+.contact__info {
+    max-width: 500px;
+}
+
 .contact-item__title {
     margin-bottom: 16px;
-    @include clamp-font-size(20, 36);
+    @include clamp-font-size(28, 48);
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800;
+    line-height: 1.125;
+    letter-spacing: -1.5px;
+}
+
+.contact-item__text {
+    @include clamp-font-size(13, 18);
+}
+
+.contact__form {
+    @include mq($sm + 1, min) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+}
+
+.contact__form-half-col {
+    @include mq($sm + 1, min) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 10px;
+    }
+}
+
+.contact__form-wide-col {
+    @include mq($sm + 1, min) {
+        flex-basis: 100%;
+        padding: 0 10px;
+    }
 }

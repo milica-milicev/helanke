@@ -50,13 +50,14 @@ textarea {
 	}
 
 	&:invalid {
-		border: 1px solid #dc3232;
+		border: 2px solid #dc3232;
 	}
 }
 
 textarea {
 	height: 150px;
 	resize: none;
+	width: 100%;
 }
 
 .wpcf7-not-valid-tip {
