@@ -22,7 +22,7 @@ a {
 	display: block;
 	padding: 0;
 
-	@include mq($md + 1, min) {
+	@include mq($lg + 1, min) {
 		display: none;
 	}
 }
@@ -73,7 +73,7 @@ a {
 }
 
 .main-navigation__menu-wrap {
-	@include mq($md) {
+	@include mq($lg) {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -103,7 +103,7 @@ a {
 		display: flex;
 	}
 
-	@include mq($md + 1, min) {
+	@include mq($lg + 1, min) {
 		display: flex;
 		align-items: center;
 		text-align: left;
@@ -113,19 +113,23 @@ a {
 .main-navigation__menu li {
 	margin-bottom: 25px;
 
-	@include mq($md + 1, min) {
-		padding-right: 40px;
+	@include mq($lg + 1, min) {
+		padding-right: 30px;
 		margin-bottom: 0;
 
 		&:last-of-type {
 			padding-right: 0;
 		}
 	}
+
+	@include mq($xl + 1, min) {
+		padding-right: 40px;
+	}
 }
 
 .main-navigation__menu a {
 	font-family: $font-main;
-	@include clamp-font-size(13, 14);
+	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 1.2px;
 	line-height: 1.4;
@@ -160,8 +164,13 @@ a {
 		}
 	}
 
-	@include mq($md) {
+	@include mq($xl) {
+		font-size: 12px;
+	}
+
+	@include mq($lg) {
 		color: $black;
+		font-size: 14px;
 	}
 }
 

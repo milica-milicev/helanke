@@ -41,7 +41,7 @@
 		fill: $black;
 	}
 
-	@include mq($md + 1, min) {
+	@include mq($lg + 1, min) {
 		max-width: 150px;
 	}
 }
@@ -68,7 +68,7 @@
 		background-color: $white-smoke;
 	}
 
-	@include mq($md) {
+	@include mq($lg) {
 		height: 35px;
 		width: 35px;
 	}
