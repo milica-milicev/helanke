@@ -31,6 +31,10 @@
         max-width: 25%;
         margin-bottom: 0;
         padding: 0 10px;
+
+        .categories--listing & {
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -65,6 +69,10 @@
         transform: scale(1);
         will-change: transform;
         backface-visibility: hidden;
+    }
+
+    .categories--listing & {
+        padding-bottom: 100%;
     }
 
     @include hover {

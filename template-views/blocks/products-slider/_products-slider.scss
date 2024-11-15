@@ -215,7 +215,7 @@
     display: block;
     color: $black;
     font-weight: 400;
-    @include clamp-font-size(16, 16);
+    font-size: 16px;
 }
 
 .product-slider__item-btn {
