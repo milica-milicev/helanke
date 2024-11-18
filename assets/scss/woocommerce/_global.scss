@@ -88,3 +88,46 @@
 		color: $white;
 	}
 }
+
+.woocommerce-result-count {
+	font-size: 14px;
+}
+
+.woocommerce-ordering {
+    @include font(chevron-down);
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: $black;
+        font-size: 12px;
+    }
+
+	select {
+		appearance: none; /* Uklanja podrazumevani stil */
+		-webkit-appearance: none; /* Za Safari */
+		-moz-appearance: none; /* Za Firefox */
+		background-color: $white;
+		color: $black;
+		padding: 10px 30px 10px 10px;
+		border: 1px solid $white-smoke;
+		border-radius: 5px;
+		font-size: 14px;
+		outline: none;
+		cursor: pointer;
+		width: 100%;
+	}
+	
+	select:focus {
+		border-color: $black;
+	}
+	
+	select option {
+		background-color: $white;
+		color: $black;
+	}
+}
