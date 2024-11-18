@@ -192,8 +192,8 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 add_filter('woocommerce_get_image_size_thumbnail', function($size) {
     return array(
-        'width' => 500,
-        'height' => 500,
+        'width' => 400,
+        'height' => 400,
         'crop' => 1, // 1 za isečenu sliku, 0 za originalne proporcije
     );
 });
