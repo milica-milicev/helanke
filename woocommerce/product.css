@@ -2,6 +2,10 @@
   padding: 45px 0;
 }
 
+.breadcrumbs {
+  margin-bottom: 40px;
+}
+
 .product__main-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -24,3 +28,8 @@
   padding: 0 10px;
 }
 /*# sourceMappingURL=product.css.map */
+.woocommerce-loop-product__link img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover; /* Po potrebi */
+}

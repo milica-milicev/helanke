@@ -188,3 +188,16 @@ add_action( 'after_setup_theme', 'nm_theme_add_woocommerce_support' );
  * Woocommerce disable css
  */
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+
+add_filter('woocommerce_get_image_size_thumbnail', function($size) {
+    return array(
+        'width' => 500,
+        'height' => 500,
+        'crop' => 1, // 1 za isečenu sliku, 0 za originalne proporcije
+    );
+});
+add_theme_support('woocommerce');
+add_theme_support('wc-product-gallery-zoom');
+add_theme_support('wc-product-gallery-lightbox');
+add_theme_support('wc-product-gallery-slider');

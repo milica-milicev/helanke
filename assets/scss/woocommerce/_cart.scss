@@ -1,6 +1,13 @@
 /*--------------------------------------------------------------
 # Woocommerce cart page
 --------------------------------------------------------------*/
+.cart {
+    
+    display: flex;
+    align-items: center;
+    grid-gap: 15px;
+    
+}
 .cart-page {
     padding: 45px 0;
 

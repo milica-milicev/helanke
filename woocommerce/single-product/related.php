@@ -15,42 +15,47 @@
  * @version     3.9.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+ if ( ! defined( 'ABSPATH' ) ) {
+    exit;
 }
 
 if ( $related_products ) : ?>
 
-	<div class="products">
-		<div class="container">
-			<?php
-			$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Možda te i ovo zanima', 'woocommerce' ) );
+    <div class="related-products-slider">
+        <div class="container">
+            <?php
+            $heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Možda te i ovo zanima', 'woocommerce' ) );
 
-			if ( $heading ) :
-				?>
-				<div class="section-head">
-					<h2 class="section-head__title"><?php echo esc_html( $heading ); ?></h2>
-				</div>
-			<?php endif; ?>
-			
-			<div class="products__container">
+            if ( $heading ) :
+                ?>
+                <div class="section-head">
+                    <h2 class="section-head__title"><?php echo esc_html( $heading ); ?></h2>
+                </div>
+            <?php endif; ?>
 
-				<?php foreach ( $related_products as $related_product ) : ?>
+            <!-- Swiper container -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <?php foreach ( $related_products as $related_product ) : ?>
+                        <?php
+                        $post_object = get_post( $related_product->get_id() );
 
-						<?php
-						$post_object = get_post( $related_product->get_id() );
-
-						setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
-
-						wc_get_template_part( 'content', 'product' );
-						?>
-
-				<?php endforeach; ?>
-
-			</div>
-		</div>
-	</div>
-	<?php
+                        setup_postdata( $GLOBALS['post'] =& $post_object );
+                        ?>
+                        <!-- Each product as a swiper-slide -->
+                        <div class="swiper-slide">
+                            <?php wc_get_template_part( 'content', 'product' ); ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <!-- Add Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> -->
+            </div>
+        </div>
+    </div>
+<?php
 endif;
 
 wp_reset_postdata();
