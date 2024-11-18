@@ -47,42 +47,41 @@ if ( woocommerce_product_loop() ) : ?>
                 <div class="products-list__aside">
                     <?php
                     $current_category = get_queried_object();
-                    $product_categories = get_terms('product_cat', array(
-                        'order'      => 'ASC',
-                        'hide_empty' => false,
-                        'parent'     => 0, // Samo glavne kategorije
-                        'exclude'    => array(16) // Uncategorized category ID
-                    ));
 
-                    // Proveravamo da li postoje kategorije proizvoda
-                    if (!empty($product_categories) && !is_wp_error($product_categories)) :
-                        // Premeštamo trenutnu kategoriju na prvo mesto
-                        usort($product_categories, function ($a, $b) use ($current_category) {
-                            if ($a->term_id === $current_category->term_id) {
-                                return -1; // Trenutna kategorija ide na prvo mesto
-                            } elseif ($b->term_id === $current_category->term_id) {
-                                return 1;
-                            }
-                            return 0; // Održava originalni redosled za ostale
-                        });
-                        ?>
-                        <div class="filter">
-                            <h3 class="filter__title">Kategorije</h3>
-                            <ul>
-                                <?php foreach ($product_categories as $category) : ?>
-                                    <?php 
-                                    // Dodajemo klasu za trenutnu kategoriju
-                                    $class = ($current_category instanceof WP_Term && $current_category->term_id === $category->term_id) ? 'filter__item-active' : ''; 
-                                    ?>
-                                    <li class="filter__item <?php echo esc_attr($class); ?>">
-                                        <a href="<?php echo esc_url(get_term_link($category)); ?>" class="filter__item-link">
-                                            <?php echo esc_html($category->name); ?>
-                                        </a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    <?php endif; ?>
+                    // Proveravamo da li je trenutna kategorija podkategorija (ima roditelja)
+                    if ($current_category instanceof WP_Term && $current_category->parent === 0) :
+                        // Dohvatamo samo glavne kategorije
+                        $product_categories = get_terms('product_cat', array(
+                            'order'      => 'ASC',
+                            'hide_empty' => false,
+                            'parent'     => 0, // Samo glavne kategorije
+                            'exclude'    => array(16) // Uncategorized category ID
+                        ));
+
+                        // Proveravamo da li postoje kategorije proizvoda
+                        if (!empty($product_categories) && !is_wp_error($product_categories)) :
+                            ?>
+                            <div class="filter">
+                                <h3 class="filter__title">Kategorije</h3>
+                                <ul>
+                                    <?php foreach ($product_categories as $category) : ?>
+                                        <?php 
+                                        // Dodajemo klasu za trenutnu kategoriju
+                                        $class = ($current_category->term_id === $category->term_id) ? 'filter__item-active' : ''; 
+                                        ?>
+                                        <li class="filter__item <?php echo esc_attr($class); ?>">
+                                            <a href="<?php echo esc_url(get_term_link($category)); ?>" class="filter__item-link">
+                                                <?php echo esc_html($category->name); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php
+                        endif;
+                    endif;
+                    ?>
+                    
                 </div>
 
                 <div class="products-list__main">
