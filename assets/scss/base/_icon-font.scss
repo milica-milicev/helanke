@@ -25,23 +25,26 @@
 	@if $filename == cart {
 		$char: "\E001";
 	}
-	@if $filename == chevron-left {
+	@if $filename == chevron-down {
 		$char: "\E002";
 	}
-	@if $filename == chevron-right {
+	@if $filename == chevron-left {
 		$char: "\E003";
 	}
-	@if $filename == facebook {
+	@if $filename == chevron-right {
 		$char: "\E004";
 	}
-	@if $filename == instagram {
+	@if $filename == facebook {
 		$char: "\E005";
 	}
-	@if $filename == search {
+	@if $filename == instagram {
 		$char: "\E006";
 	}
-	@if $filename == user {
+	@if $filename == search {
 		$char: "\E007";
+	}
+	@if $filename == user {
+		$char: "\E008";
 	}
 
 	@return $char;
@@ -60,6 +63,9 @@
 
 .font-cart {
 	@include font(cart);
+}
+.font-chevron-down {
+	@include font(chevron-down);
 }
 .font-chevron-left {
 	@include font(chevron-left);

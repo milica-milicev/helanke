@@ -8,12 +8,43 @@
 	width: 100%;
 	top: 0;
 	border-bottom: 1px solid transparent;
-	background-color: transparent;
 	transition: $dur $ease;
+	background-color: $white;
+
+	&.is-sticky {
+		border-color: rgba($black, 0.1);
+	}
+}
+
+.site-header__clear {
+	background-color: transparent;
+
+	.site-header__logo-img {
+		fill: $white;
+	}
+
+	.main-navigation__menu a {
+		color: $white;
+
+		&::after {
+			background-color: $white;
+		}
+	}
 
 	&.is-sticky {
 		background-color: $white;
-		border-color: rgba($black, 0.1);
+
+		.site-header__logo-img {
+			fill: $black;
+		}
+
+		.main-navigation__menu a {
+			color: $black;
+
+			&::after {
+				background-color: $black;
+			}
+		}
 	}
 }
 
@@ -34,14 +65,10 @@
 	max-width: 130px;
 	width: 100%;
 	position: relative;
-	fill: $white;
+	fill: $black;
 	transition: $dur $ease;
 
-	.is-sticky & {
-		fill: $black;
-	}
-
-	@include mq($md + 1, min) {
+	@include mq($lg + 1, min) {
 		max-width: 150px;
 	}
 }
@@ -54,7 +81,7 @@
 	justify-content: center;
 	border-radius: 50%;
 	color: $white;
-	background-color: $white;
+	background-color: $white-smoke;
 	border: none;
 	position: relative;
 	transition: $dur $ease;
@@ -64,11 +91,7 @@
 		color: $black;
 	}
 
-	.is-sticky & {
-		background-color: $white-smoke;
-	}
-
-	@include mq($md) {
+	@include mq($lg) {
 		height: 35px;
 		width: 35px;
 	}
