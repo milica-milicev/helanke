@@ -27,10 +27,8 @@ if ( ! $notices ) {
 
 <?php foreach ( $notices as $notice ) : ?>
 	<div class="notices">
-		<div class="container">
-			<div class="woocommerce-info"<?php echo wc_get_notice_data_attr( $notice ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-				<?php echo wc_kses_notice( $notice['notice'] ); ?>
-			</div>
+		<div class="woocommerce-info"<?php echo wc_get_notice_data_attr( $notice ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<?php echo wc_kses_notice( $notice['notice'] ); ?>
 		</div>
 	</div>
 <?php endforeach; ?>

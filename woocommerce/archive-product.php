@@ -17,12 +17,13 @@ get_header( 'shop' );
  * @hooked woocommerce_output_content_wrapper - 10
  * @hooked woocommerce_breadcrumb - 20
  */
-do_action( 'woocommerce_before_main_content' );
+//do_action( 'woocommerce_before_main_content' );
 ?>
 
 <div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/_demo/blog-banner.webp');">
     <div class="container">
         <div class="banner__content">
+            <?php woocommerce_breadcrumb(); ?>
             <h1 class="banner__title"><?php woocommerce_page_title(); ?></h1>
         </div>
     </div>
@@ -72,22 +73,22 @@ endif; ?>
 if ( woocommerce_product_loop() ) : ?>
     <div class="products-list">
         <div class="container">
-            <?php
-                do_action( 'woocommerce_before_shop_loop' );
-
-                if ( wc_get_loop_prop( 'total' ) ) : ?>
-                    <div class="products-list__row">
-                        <?php while ( have_posts() ) : ?>
-                            <div class="products-list__item">
-                                <?php
-                                    the_post();
-                                    do_action( 'woocommerce_shop_loop' );
-                                    wc_get_template_part( 'content', 'product' ); 
-                                ?>
-                            </div>
-                        <?php endwhile; ?>
-                    </div>
-               <?php endif; ?>
+            <div class="products-list__info">
+                <?php do_action( 'woocommerce_before_shop_loop' ); ?>
+            </div> 
+            <?php if ( wc_get_loop_prop( 'total' ) ) : ?>
+                <div class="products-list__row">
+                    <?php while ( have_posts() ) : ?>
+                        <div class="products-list__item">
+                            <?php
+                                the_post();
+                                do_action( 'woocommerce_shop_loop' );
+                                wc_get_template_part( 'content', 'product' ); 
+                            ?>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
     <?php

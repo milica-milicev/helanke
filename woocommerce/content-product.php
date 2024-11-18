@@ -31,7 +31,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 *
 	 * @hooked woocommerce_template_loop_product_link_open - 10
 	 */
-	//do_action( 'woocommerce_before_shop_loop_item' );
+
 	$product_id = get_the_ID(); // Uzimanje ID-a trenutnog proizvoda
 	$hover_image = get_field('hover_image', $product_id); // Dohvatanje ACF hover slike
 	$hover_anim = "";
@@ -41,24 +41,27 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	endif;
 	?>
 
-	<div class="product-item__img-wrapper <?php echo $hover_anim; ?>">
-		<?php
-		woocommerce_template_loop_product_link_open();
-		/**
-		 * Hook: woocommerce_before_shop_loop_item_title.
-		 *
-		 * @hooked woocommerce_show_product_loop_sale_flash - 10
-		 * @hooked woocommerce_template_loop_product_thumbnail - 10
-		 */
+	<div class="product-item__wrap">
+		<a href="<?php the_permalink(); ?>" class="product-item__img-wrapper woocommerce-LoopProduct-link <?php echo $hover_anim; ?>">
+			<?php
+			/**
+			 * Hook: woocommerce_before_shop_loop_item_title.
+			 *
+			 * @hooked woocommerce_show_product_loop_sale_flash - 10
+			 * @hooked woocommerce_template_loop_product_thumbnail - 10
+			 */
 
-		if ($hover_image) : ?>
-			<img class="product-item__hover-img" src="<?php echo $hover_image['url']; ?>" alt="<?php echo esc_attr(get_the_title($product_id)); ?>" />
-		<?php endif;
+			if ($hover_image) : ?>
+				<img class="product-item__hover-img" src="<?php echo $hover_image['url']; ?>" alt="<?php echo esc_attr(get_the_title($product_id)); ?>" />
+			<?php endif;
 
-		do_action( 'woocommerce_before_shop_loop_item_title' ); 
+			do_action( 'woocommerce_before_shop_loop_item_title' ); 
+			?>
+		</a>
 
-		woocommerce_template_loop_product_link_close();
-		?>
+		<div class="product-item__actions">
+			<?php woocommerce_template_loop_add_to_cart(); ?>
+		</div>
 	</div>
 
 	<div class="product-item__info">
@@ -92,8 +95,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		// do_action( 'woocommerce_after_shop_loop_item' );
 		?>
 
-		<div class="product-item__btn">
-			<?php woocommerce_template_loop_add_to_cart(); ?>
-		</div>
+		
 	</div>
 </div>

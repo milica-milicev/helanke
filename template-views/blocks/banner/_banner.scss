@@ -1,15 +1,14 @@
 .banner {
-   
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    min-height: 240px;
+    min-height: 180px;
 
     @include mq($md + 1, min) {
-        min-height: 380px;
+        min-height: 240px;
         margin-bottom: 40px;
     }
 }

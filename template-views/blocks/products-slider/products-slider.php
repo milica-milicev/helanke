@@ -30,39 +30,32 @@
                         $product_link = get_the_permalink($product_id);
                         $product_price = $product->get_price_html();
                         $product_hover = get_field('hover_image',$product_id)
-                        
-                        // Povlačimo odgovarajuću hover sliku za trenutni proizvod
-                        // $hover_image = $products[$hover_image_field_name];
-
                         ?>
-                        <div class="product-slider__item swiper-slide">
-                            <div class="product-slider__item-wrap">
-                                <a href="<?php echo $product_link; ?>" class="product-slider__img-wrapper">
+                        <div class="product-item swiper-slide">
+                            <div class="product-item__wrap">
+                                <a href="<?php echo $product_link; ?>" class="product-item__img-wrapper">
                                     <!-- Glavna slika proizvoda -->
-                                    <img class="product-slider__img product-slider__img--default" src="<?php echo $product_thumb; ?>" alt="">
+                                    <img src="<?php echo $product_thumb; ?>" alt="">
                                     
                                     <!-- Hover slika proizvoda -->
                                     <?php if ($product_hover && isset($product_hover['url'])): ?>
-                                        <img class="product-slider__img product-slider__img--hover" src="<?php echo $product_hover['url']; ?>" alt="<?php echo $product_hover['alt']; ?>">
+                                        <img class="product-item__hover-img" src="<?php echo $product_hover['url']; ?>" alt="<?php echo $product_hover['alt']; ?>">
+                                    <?php endif; ?>
+
+                                    <?php if ($product->is_on_sale()) : ?>
+                                        <span class="onsale">Akcija</span>
                                     <?php endif; ?>
                                 </a>
-                                <div class="product-slider__item-actions">
-                                    <!-- <a href="javascript:;">
-                                        <img class="favorite-icon" src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/heart.svg" alt="Favorite">
-                                        <span class="icon-text">Add to Favorite</span>
-                                    </a> -->
-                                    <a href="javascript:;" class="product-slider__item-action">
-                                        <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/_demo/cart.svg" alt="Add to Cart"> -->
-                                        <span class="product-slider__item-action-icon icon font-cart"></span>
-                                        <span class="product-slider__item-action-text">Add to Cart</span>
-                                    </a>
-                                </div>  
-                                <?php if ($product->is_on_sale()) : ?>
-                                    <span class="product-slider__item-tag">-20%</span>
-                                <?php endif; ?>
+                                    
+                                <div class="product-item__actions">
+                                    <?php woocommerce_template_loop_add_to_cart(); ?>
+                                </div>
                             </div>
-                            <h2 class="product-slider__item-title"><a href="<?php echo $product_link; ?>"><?php echo $product_title; ?></a></h2>
-                            <span class="product-slider__item-price"><?php echo $product_price; ?></span>
+                            
+                            <div class="product-item__info">
+                                <a href="<?php echo $product_link; ?>"><h2 class="product-slider__item-title"><?php echo $product_title; ?></h2></a>
+                                <span class="product-item__price"><?php echo $product_price; ?></span>
+                            </div>
                         </div>
                         <?php
                     endif;

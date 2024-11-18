@@ -31,3 +31,11 @@ html {
         padding: 0 15px;
     }
 }
+
+.site {
+    padding-top: 81px;
+
+    @include mq($lg) {
+        padding-top: 76px;
+    }
+}

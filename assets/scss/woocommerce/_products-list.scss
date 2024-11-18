@@ -1,3 +1,16 @@
+.products-list__info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    .woocommerce-notices-wrapper {
+        flex: 1 0 100%;
+        margin-bottom: 10px;
+    }
+}
+
 .products-list__row {
     display: flex;
     flex-wrap: wrap;
@@ -23,18 +36,19 @@
 }
 
 // product-item
-.product-item__img-wrapper {
+.product-item__wrap {
     margin-bottom: 24px;
+    position: relative;
+}
 
-    a {
-        position: relative;
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        padding-bottom: 145%;
-        border-radius: 4px;
-        display: block;
-    }
+.product-item__img-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 145%;
+    border-radius: 4px;
+    display: block;
 
     @include hover {
         &:not(.product-item__no-hover-anim) img:not(.product-item__hover-img) {
@@ -79,6 +93,79 @@
     letter-spacing: 1.2px;
     font-weight: 800;
     z-index: 1;
+}
+
+.product-item__actions .button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 350px;
+    width: calc(100% - 30px);
+    background: $white;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    transition: $dur $ease;
+
+    @include hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.product-item__actions .button::before {
+	content: '';
+	background-color: $black;
+	z-index: 1;
+	display: block;
+	height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border-radius: 10px;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.product-item__actions .button::after {
+	content: '';
+	border: 4px solid $white;
+	border-radius: 50%;
+	border-top: 4px solid $black;
+	width: 20px;
+	height: 20px;
+	animation: spin 2s linear infinite;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -10px;
+	margin-top: -10px;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.product-item__actions .button.loading {
+	opacity: 0.9;
+  	cursor: not-allowed;
+}
+
+.product-item__actions .button.loading::before,
+.product-item__actions .button.loading::after {
+	opacity: 1;
+	visibility: visible;
+}
+
+.product-item__actions .added_to_cart {
+	display: none;
 }
 
 .product-item__info h2 {
