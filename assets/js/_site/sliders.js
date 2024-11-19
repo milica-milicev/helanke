@@ -72,7 +72,7 @@ const Sliders = {
                   spaceBetween: 15,
               },
               1024: {
-                  slidesPerView: 3,
+                  slidesPerView: 5.2,
                   spaceBetween: 20,
               },
           }
