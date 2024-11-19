@@ -21,38 +21,37 @@
 
 if ( $related_products ) : ?>
 
-    <div class="related-products-slider">
-        <div class="container">
-            <?php
-            $heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Možda te i ovo zanima', 'woocommerce' ) );
+    <div class="products-slider products-slider--related">
+        <?php
+        $heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Možda te i ovo zanima', 'woocommerce' ) );
 
-            if ( $heading ) :
-                ?>
-                <div class="section-head">
-                    <h2 class="section-head__title"><?php echo esc_html( $heading ); ?></h2>
-                </div>
-            <?php endif; ?>
-
-            <!-- Swiper container -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <?php foreach ( $related_products as $related_product ) : ?>
-                        <?php
-                        $post_object = get_post( $related_product->get_id() );
-
-                        setup_postdata( $GLOBALS['post'] =& $post_object );
-                        ?>
-                        <!-- Each product as a swiper-slide -->
-                        <div class="swiper-slide">
-                            <?php wc_get_template_part( 'content', 'product' ); ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <!-- Add Pagination and Navigation -->
-                <div class="swiper-pagination"></div>
-                <!-- <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div> -->
+        if ( $heading ) : ?>
+            <div class="products-slider__head">
+                <h2 class="section-title products-slider__title"><?php echo esc_html( $heading ); ?></h2>
             </div>
+        <?php endif; ?>
+
+        <!-- Swiper container -->
+        <div class="products-slider__wrapper js-swiper-products swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ( $related_products as $related_product ) : ?>
+                    <?php
+                    $post_object = get_post( $related_product->get_id() );
+
+                    setup_postdata( $GLOBALS['post'] =& $post_object );
+                    ?>
+                    <!-- Each product as a swiper-slide -->
+                    <div class="product-item swiper-slide">
+                        <?php wc_get_template_part( 'content', 'product' ); ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div class="product-slider__nav-container">
+            <!-- Strelice za navigaciju -->
+            <div class="product-slider__nav product-slider__nav-prev font-chevron-left swiper-button-prev-products"></div>
+            <div class="product-slider__nav product-slider__nav-next font-chevron-right swiper-button-next-products"></div>
         </div>
     </div>
 <?php
