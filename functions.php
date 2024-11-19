@@ -201,3 +201,9 @@ add_theme_support('woocommerce');
 add_theme_support('wc-product-gallery-zoom');
 add_theme_support('wc-product-gallery-lightbox');
 add_theme_support('wc-product-gallery-slider');
+
+function custom_related_products_args( $args ) {
+    $args['posts_per_page'] = 6; // Broj proizvoda koji želite da prikažete
+    return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'custom_related_products_args' );

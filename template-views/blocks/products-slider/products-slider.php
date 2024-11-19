@@ -47,9 +47,9 @@
                                     <?php endif; ?>
                                 </a>
                                     
-                                <div class="product-item__actions">
-                                    <?php woocommerce_template_loop_add_to_cart(); ?>
-                                </div>
+                                <!-- <div class="product-item__actions">
+                                    <?php //woocommerce_template_loop_add_to_cart(); ?>
+                                </div> -->
                             </div>
                             
                             <div class="product-item__info">
