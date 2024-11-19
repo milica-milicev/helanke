@@ -6,10 +6,19 @@
     align-items: center;
     margin-bottom: 20px;
     min-height: 180px;
+    background-color: $black;
 
     @include mq($md + 1, min) {
         min-height: 240px;
         margin-bottom: 40px;
+    }
+}
+
+.banner--sm {
+    min-height: 50px;
+
+    @include mq($md + 1, min) {
+        min-height: 70px;
     }
 }
 

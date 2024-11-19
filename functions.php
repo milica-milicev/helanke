@@ -207,3 +207,16 @@ function custom_related_products_args( $args ) {
     return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'custom_related_products_args' );
+
+function custom_reorder_single_product_hooks() {
+    // Ukloni postojeće hooks
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+
+    // Dodaj hooks u novom redosledu
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 20 ); // Prebacujemo add_to_cart na mesto excerpta
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 30 ); // Prebacujemo excerpt na mesto add_to_cart
+}
+add_action( 'woocommerce_init', 'custom_reorder_single_product_hooks' );
+
+

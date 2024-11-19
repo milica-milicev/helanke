@@ -5,20 +5,9 @@
     margin-bottom: 20px;
 	max-width: 100%;
 	overflow-x: hidden;
-	padding-top: 100px;
 
 	@include mq($md) {
 		margin-bottom: 15px;
-	}
-}
-
-.breadcrumbs {
-	margin-bottom: 30px;
-
-	@include mq($md) {
-		a {
-			font-size: 13px;
-		}
 	}
 }
 
@@ -186,17 +175,18 @@
 }
 
 .product__title {
-	@include clamp-font-size(18, 28);
+	@include clamp-font-size(18, 30);
 	font-weight: bold;
 	margin-bottom: 17px;
 	text-transform: uppercase;
+	letter-spacing: -0.75px;
 }
 
 .product__price {
 	margin-bottom: 20px;
 
 	span {
-		@include clamp-font-size(15, 26);
+		@include clamp-font-size(16, 28);
 		font-weight: bold;
 	}
 
@@ -209,47 +199,6 @@
 		margin-bottom: 10px;
 	}
 }
-
-.price {
-	display: flex;
-	align-items: baseline;
-}
-
-.price ins {
-	background-color: transparent;
-	display: inline-block;
-}
-
-.price .woocommerce-Price-amount,
-.price {
-	@include clamp-font-size(17, 22);
-	font-weight: bold;
-}
-
-.price del {
-	// color: $grey;
-	display: inline-block;
-}
-
-.price del .woocommerce-Price-amount,
-.price del .woocommerce-Price-amount {
-	@include clamp-font-size(14, 15);
-	// color: $grey;
-	font-weight: normal;
-	margin-right: 5px;
-	display: block;
-}
-
-.product__short-description {
-	margin-bottom: 20px;
-}
-
-// .product__main-summary .cart {
-// 	display: flex;
-// 	align-items: center;
-// 	margin-bottom: 20px;
-// 	grid-gap: 20px;
-// }
 
 .product__meta-item {
 	display: block;

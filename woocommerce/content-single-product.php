@@ -32,14 +32,14 @@ global $product;
 	?>
 
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
-		<div class="product__main">
-			<div class="breadcrumbs">
-				<div class="container">
-					<div class="hero__breadcrumbs">
-						<?php woocommerce_breadcrumb(); ?>
-					</div>
+		<div class="banner banner--sm">
+			<div class="container">
+				<div class="banner__content">
+					<?php woocommerce_breadcrumb(); ?>
 				</div>
 			</div>
+		</div>
+		<div class="product__main">
 			<div class="container">
 				<div class="product__main-wrap">
 					<div class="product__main-gallery">
